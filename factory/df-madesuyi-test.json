@@ -1,0 +1,9 @@
+{
+	"name": "df-madesuyi-test",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a8fa4264-53ae-49b0-881a-727d485c3e60",
+		"tenantId": "e1662d48-eda0-4fb6-9f8e-ba3af0832563"
+	}
+}
