@@ -1,0 +1,23 @@
+{
+	"name": "SalesforceWells2019DLCSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stmadesuyidev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "wells_from_salesforce_2019_and_up.csv",
+				"fileSystem": "salesforce-wells"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
