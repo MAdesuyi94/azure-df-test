@@ -23,27 +23,7 @@
 			],
 			"transformations": [
 				{
-					"name": "MapDrifted1",
-					"description": "Creates an explicit mapping for each drifted column"
-				},
-				{
-					"name": "MapDrifted2",
-					"description": "Creates an explicit mapping for each drifted column"
-				},
-				{
-					"name": "MapDrifted3",
-					"description": "Creates an explicit mapping for each drifted column"
-				},
-				{
-					"name": "MapDrifted4",
-					"description": "Creates an explicit mapping for each drifted column"
-				},
-				{
-					"name": "MapDrifted5",
-					"description": "Creates an explicit mapping for each drifted column"
-				},
-				{
-					"name": "MapDrifted6",
+					"name": "MapDriftedColumns",
 					"description": "Creates an explicit mapping for each drifted column"
 				},
 				{
@@ -55,11 +35,6 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> SalesforceWellsDL",
-				" derive() ~> MapDrifted1",
-				" derive() ~> MapDrifted2",
-				" derive() ~> MapDrifted3",
-				" derive() ~> MapDrifted4",
-				" derive() ~> MapDrifted5",
 				"SalesforceWellsDL derive(Id = toString(byName('Id')),",
 				"          OwnerId = toString(byName('OwnerId')),",
 				"          IsDeleted = toBoolean(byName('IsDeleted')),",
@@ -315,8 +290,8 @@
 				"          Planned_Tubing_Installation_Date__c = toTimestamp(byName('Planned_Tubing_Installation_Date__c')),",
 				"          Region__c = toString(byName('Region__c')),",
 				"          LoadDate = toString(byName('LoadDate')),",
-				"          LoadedBy = toString(byName('LoadedBy'))) ~> MapDrifted6",
-				"MapDrifted6 filter(year(CreatedDate)>=2019) ~> Filter2019AndUp",
+				"          LoadedBy = toString(byName('LoadedBy'))) ~> MapDriftedColumns",
+				"MapDriftedColumns filter(year(CreatedDate)>=2019) ~> Filter2019AndUp",
 				"Filter2019AndUp sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     umask: 0022,",
