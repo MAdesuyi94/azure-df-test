@@ -3,7 +3,8 @@
 	"properties": {
 		"parameters": {
 			"SeriesID": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "TOTAL.NGTCPUS.M"
 			}
 		},
 		"annotations": [],
