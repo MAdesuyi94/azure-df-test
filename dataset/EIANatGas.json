@@ -1,0 +1,19 @@
+{
+	"name": "EIANatGas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stmadesuyidev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "NatGasConsumption.json",
+				"fileSystem": "eia-natural-gas"
+			}
+		},
+		"schema": {}
+	}
+}
