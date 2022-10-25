@@ -5,17 +5,23 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"name": "source1"
+					"dataset": {
+						"referenceName": "EIANatGas",
+						"type": "DatasetReference"
+					},
+					"name": "DLFile"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
 				"parameters{",
-				"     fileName as string",
+				"     fileName as string ($fileName)",
 				"}",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'documentPerLine') ~> DLFile"
 			]
 		}
 	}

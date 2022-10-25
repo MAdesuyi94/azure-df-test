@@ -59,6 +59,51 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "DL2SQL",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "EIA2DL",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "DL2SQL",
+						"type": "DataFlowReference",
+						"parameters": {
+							"fileName": {
+								"value": "'@{pipeline().parameters.fileName}'",
+								"type": "Expression"
+							}
+						},
+						"datasetParameters": {
+							"DLFile": {
+								"fileName": {
+									"value": "@pipeline().parameters.fileName",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
 			}
 		],
 		"parameters": {
