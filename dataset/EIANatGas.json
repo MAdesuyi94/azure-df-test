@@ -5,12 +5,20 @@
 			"referenceName": "stmadesuyidev",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "NatGasConsumption.json",
+				"fileName": {
+					"value": "@concat(dataset().fileName,'.json')",
+					"type": "Expression"
+				},
 				"fileSystem": "eia-natural-gas"
 			}
 		},
