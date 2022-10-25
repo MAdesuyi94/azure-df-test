@@ -1,10 +1,15 @@
 {
 	"name": "EIA",
 	"properties": {
+		"parameters": {
+			"SeriesID": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "http://api.eia.gov/series/?api_key=q6ZVgmhz2DdWELGh6CVs32BryWIij0hhyQd2rYw2&series_id=",
+			"url": "@{concat('http://api.eia.gov/series/?api_key=q6ZVgmhz2DdWELGh6CVs32BryWIij0hhyQd2rYw2&series_id=',linkedService().SeriesID)}",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
