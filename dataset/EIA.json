@@ -5,8 +5,19 @@
 			"referenceName": "EIA",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"RelPath": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().RelPath",
+				"type": "Expression"
+			}
+		},
 		"schema": []
 	}
 }
