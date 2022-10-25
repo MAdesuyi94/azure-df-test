@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(dataset().fileName,'.json')",
+					"value": "@dataset().fileName",
 					"type": "Expression"
 				},
 				"fileSystem": "eia-natural-gas"
