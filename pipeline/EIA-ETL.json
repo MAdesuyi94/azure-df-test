@@ -38,7 +38,13 @@
 				"inputs": [
 					{
 						"referenceName": "EIA",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"RelPath": {
+								"value": "@concat('?api_key=',pipeline().parameters.APIKey,'&series_id=',pipeline().parameters.SeriesID)",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
@@ -46,12 +52,26 @@
 						"referenceName": "EIANatGas",
 						"type": "DatasetReference",
 						"parameters": {
-							"fileName": "NatGasConsumption"
+							"fileName": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
+							}
 						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"SeriesID": {
+				"type": "string"
+			},
+			"fileName": {
+				"type": "string"
+			},
+			"APIKey": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
