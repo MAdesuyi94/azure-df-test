@@ -1,0 +1,20 @@
+{
+	"name": "EIANatGas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stmadesuyidev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "NatGasConsumption.parquet",
+				"fileSystem": "eia-natural-gas"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

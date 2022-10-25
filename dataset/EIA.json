@@ -1,0 +1,12 @@
+{
+	"name": "EIA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "EIA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
