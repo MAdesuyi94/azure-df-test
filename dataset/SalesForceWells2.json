@@ -1,0 +1,20 @@
+{
+	"name": "SalesForceWells2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "stmadesuyidev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "wells_from_salesforce",
+				"fileSystem": "salesforce-wells"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
